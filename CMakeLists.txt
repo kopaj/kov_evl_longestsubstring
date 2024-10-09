@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(rosidl_typesupport_c REQUIRED) 
 
 add_executable(string_generator_node src/string_generator_node.cpp)
 ament_target_dependencies(string_generator_node rclcpp std_msgs)
