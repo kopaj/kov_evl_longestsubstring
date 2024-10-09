@@ -4,14 +4,13 @@
   <name>kov_evl_longestsubstring</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="todo@todo.com">TODO:</maintainer>
-  <license>GNU General Public License v3.0</license>
+  <maintainer email="kovacs.patrik.janos@hallgato.sze.hu">kopaj</maintainer>
+  <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <exec_depend>ros2launch</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
