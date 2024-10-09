@@ -3,7 +3,7 @@ ROS 2 C++ package.  [![Static Badge](https://img.shields.io/badge/ROS_2-Humble-3
 
 A package két node-ot tartalmaz, a `/string_generator` és `/substring_finder` nodeok közös csatornán kommunikálnak, jelen esetben egy `string_topic` - on. 
 
-A `/string_generator` publisher node szerepet tölt be, azaz két random generált sztringet hirdet a string_topicon, amire a `/substring_finder` feliratkozik. A `/substring_finder` node a két sztring (ami valójában csak egy hosszabb elfelezett sztring) lehosszabb közös résztringjét keresi meg, majd az az outputra kiírja.
+A `/string_generator` publisher node szerepet tölt be, azaz két random generált sztringet hirdet a `string_topic`-on, amire a `/substring_finder` feliratkozik. A `/substring_finder` node a két sztring (ami valójában csak egy hosszabb elfelezett sztring) lehosszabb közös résztringjét keresi meg, majd az az outputra kiírja.
 
 A csomag megvalósítása `ROS 2 Humble` -ben történt. 
 
@@ -41,7 +41,7 @@ ros2 launch kov_evl_longestsubstring launch_file.py
 
 ## Graph
 
-Az alábbi képen a csomag struktúráját leíró gráf látható.
+Az alábbi képen a csomag struktúráját leíró `gráf` látható.
 
 ![](img/rosgraph.png)
 
