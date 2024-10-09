@@ -27,7 +27,7 @@ cd ~/ros2_ws
 colcon build --packages-select kov_evl_longestsubstring --symlink-install
 ```
 
-<summary> Don't forget to source before ROS commands.</summary>
+### Don't forget to source before ROS commands.
 
 ``` bash
 source ~/ros2_ws/install/setup.bash
