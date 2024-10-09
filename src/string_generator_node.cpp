@@ -21,12 +21,12 @@ private:
         std::string str1 = generate_random_string(HOSSZ);
         std::string str2 = generate_random_string(HOSSZ);
 
-        auto message1 = std_msgs::msg::String();
-        message1.data = str1;
+        //auto message1 = std_msgs::msg::String();
+        //message1.data = str1;
         RCLCPP_INFO(this->get_logger(), "1. Generált sztring: '%s'", str1.c_str());
         //publisher_->publish(message1);
 
-        auto message2 = std_msgs::msg::String();
+        //auto message2 = std_msgs::msg::String();
         //message2.data = str2;
         RCLCPP_INFO(this->get_logger(), "2. Generált sztring: '%s'", str2.c_str());
         auto message = std_msgs::msg::String();

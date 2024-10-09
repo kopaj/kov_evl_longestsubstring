@@ -9,7 +9,7 @@ public:
     SubstringFinderNode() : Node("substring_finder_node")
     {
         subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "string_topic", 20,
+            "string_topic", 2 * HOSSZ,
             std::bind(&SubstringFinderNode::find_longest_common_substring, this, std::placeholders::_1));
     }
 
@@ -44,7 +44,7 @@ private:
     {
         std::string received_str = msg->data;
 
-        std::string str1 = received_str.substr(0,HOSSZ - 1);
+        std::string str1 = received_str.substr(0,HOSSZ);
         std::string str2 = received_str.substr(HOSSZ, 2 * HOSSZ);
 
         RCLCPP_INFO(this->get_logger(), "1. Kapott sztring: '%s'", str1.c_str());
