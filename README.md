@@ -12,30 +12,28 @@ A csomag megvalósítása `ROS 2 Humble` -ben történt.
 It is assumed that the workspace is `~/ros2_ws/`.
 
 ### Clone the packages
-``` r
+``` bash
 cd ~/ros2_ws/src
 ```
-``` r
+``` bash
 git clone https://github.com/kopaj/kov_evl_longestsubstring
 ```
 
 ### Build ROS 2 packages
-``` r
+``` bash
 cd ~/ros2_ws
 ```
-``` r
+``` bash
 colcon build --packages-select kov_evl_longestsubstring --symlink-install
 ```
 
-<details>
 <summary> Don't forget to source before ROS commands.</summary>
 
 ``` bash
 source ~/ros2_ws/install/setup.bash
 ```
-</details>
 
-``` r
+``` bash
 ros2 launch kov_evl_longestsubstring launch_file.py
 ```
 
