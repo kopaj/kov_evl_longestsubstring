@@ -1,5 +1,12 @@
 # `kov_evl_longestsubstring` package
 ROS 2 C++ package.  [![Static Badge](https://img.shields.io/badge/ROS_2-Humble-34aec5)](https://docs.ros.org/en/humble/)
+
+A package két node-ot tartalmaz, a `/string_generator` és `/substring_finder` nodeok közös csatornán kommunikálnak, jelen esetben egy `string_topic` - on. 
+
+A `/string_generator` publisher node szerepet tölt be, azaz két random generált sztringet hirdet a string_topicon, amire a `/substring_finder` feliratkozik. A `/substring_finder` node a két sztring (ami valójában csak egy hosszabb elfelezett sztring) lehosszabb közös résztringjét keresi meg, majd az az outputra kiírja.
+
+A csomag megvalósítása `ROS 2 Humble` -ben történt. 
+
 ## Packages and build
 
 It is assumed that the workspace is `~/ros2_ws/`.
@@ -29,28 +36,15 @@ source ~/ros2_ws/install/setup.bash
 </details>
 
 ``` r
-ros2 launch kov_evl_longestsubstring launch_example1.launch.py
+ros2 launch kov_evl_longestsubstring launch_file.py
 ```
 
-# Delete this part if you are using it as a template
+## Graph
 
-ROS 2 pacage template, to get started, use template by clicking on the Green button labeled [`Use this template`](https://github.com/kopaj/kov_evl_longestsubstring/generate) / [`Create new repository`](https://github.com/kopaj/kov_evl_longestsubstring/generate). 
+Az alábbi képen a csomag struktúráját leíró gráf látható.
 
-<p align="center"><img src="img/use_this_template01.png" width="60%" /></p>
+![](img/rosgraph.png)
 
+Ez a `kimenet` futás közben: 
 
-Let's assume 
-- your Github username is `mycoolusername`
-- your ROS 2 repo shold be `cool_ros2_package`
-
-Replace everything in the cloned repo:
-
-- `kov_evl_longestsubstring` >> `cool_ros2_package` (the folder was already renamed after `Use this template`)
-- `kopaj` >> `mycoolusername`
-- find all `todo` strings and fill the blanks
-
-The easiest way is VS code:
-
-<p align="center"><img src="img/replace01.png" width="60%" /></p>
-
-Now `colcon build` your ROS 2 package and you can start wokring.
+![](img/futas.PNG)
