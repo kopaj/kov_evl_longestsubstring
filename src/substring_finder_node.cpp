@@ -1,13 +1,15 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
+#define HOSSZ 15
+
 class SubstringFinderNode : public rclcpp::Node
 {
 public:
     SubstringFinderNode() : Node("substring_finder_node")
     {
         subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "string_topic", 10,
+            "string_topic", 20,
             std::bind(&SubstringFinderNode::find_longest_common_substring, this, std::placeholders::_1));
     }
 
@@ -41,12 +43,14 @@ private:
     void find_longest_common_substring(const std_msgs::msg::String::SharedPtr msg)
     {
         std::string received_str = msg->data;
-        RCLCPP_INFO(this->get_logger(), "Kapott sztring: '%s'", received_str.c_str());
 
-        // For simplicity, we'll just compare two hardcoded strings here
-        std::string str1 = "ros2example";
-        std::string str2 = received_str;
+        std::string str1 = received_str.substr(0,HOSSZ - 1);
+        std::string str2 = received_str.substr(HOSSZ, 2 * HOSSZ);
 
+        RCLCPP_INFO(this->get_logger(), "1. Kapott sztring: '%s'", str1.c_str());
+
+        RCLCPP_INFO(this->get_logger(), "2. Kapott sztring: '%s'", str2.c_str());
+        
         std::string lcs = longest_common_substring(str1, str2);
         RCLCPP_INFO(this->get_logger(), "Leghosszabb közös részsztring: '%s'", lcs.c_str());
     }
